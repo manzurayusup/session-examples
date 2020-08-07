@@ -19,8 +19,4 @@ export class AppComponent {
 
     console.log(this.covData);
   }
-
-  getCovData() {
-    return this.covData;
-  }
 }

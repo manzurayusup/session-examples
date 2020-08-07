@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private appComponent: AppComponent) { }
+  constructor(public appComponent: AppComponent) { }
 
   ngOnInit(): void {
   }
