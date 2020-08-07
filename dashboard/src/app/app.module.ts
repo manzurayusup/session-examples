@@ -30,7 +30,7 @@ import { HomeComponent } from './common/home/home.component';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [AppComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
