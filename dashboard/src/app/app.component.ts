@@ -9,14 +9,35 @@ import { CovidModel } from './models/covid-data';
 })
 export class AppComponent {
   title = 'dashboard';
+
   covData = new CovidModel();
+  summary = [
+    {title: "NewConfirmed", value: 0},
+    {title: "TotalConfirmed", value: 0},
+    {title: "NewDeaths", value: 0},
+    {title: "TotalDeaths", value: 0},
+    {title: "NewRecovered", value: 0},
+    {title: "TotalRecovered", value: 0}
+  ]
   
 
-  constructor(private covid: CovidService) { 
-    this.covid.getSummary().subscribe((data) => {
-      this.covData = data as CovidModel;
-    });
-
-    console.log(this.covData);
+  constructor(private covid: CovidService) {
   }
+
+  ngOnInit(): void {
+    this.covid.getSummary().subscribe((res) => {
+      this.covData = res as CovidModel;
+    });
+    console.log(this.covData);
+
+    for (let i = 0; i < this.summary.length; i++) {
+      const t = this.summary[i]["title"];
+      this.summary[i]["value"] = this.covData.Global[t];
+    }
+  }
+
+
 }
+  
+
+  

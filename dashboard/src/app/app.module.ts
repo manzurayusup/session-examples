@@ -13,6 +13,7 @@ import { NavComponent } from './common/nav/nav.component';
 
 //The following added to routing:
 import { HomeComponent } from './common/home/home.component';
+import { TableComponent } from './pages/table/table.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { HomeComponent } from './common/home/home.component';
     LoginComponent,
     RegisterComponent,
     ForgotPasswordComponent,
-    NavComponent
+    NavComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,

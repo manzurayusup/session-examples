@@ -2,41 +2,26 @@
 <div id="layoutSidenav">
     <app-nav></app-nav>
     <div id="layoutSidenav_content">
-        <router-outlet></router-outlet>
-        <!-- COVID-19 TABLE -->
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12" style="height: 450px; overflow: scroll">
-                    <table class="table table-striped" width="100%">
-                        <thead class="thead-dark">
-                            <tr>
-                                <th>Country</th>
-                                <th>Today's Cases</th>
-                                <th>Total Cases</th>
-                                <th>Today's Deaths</th>
-                                <th>Total Deaths</th>
-                                <th>Today's Recovered</th>
-                                <th>Total Recovered</th>
-                            </tr>
-                        </thead>
-                        <tr *ngFor='let c of covData.Countries'>
-                            <td>{{ c.Country }}</td>
-                            <td>{{ c.NewConfirmed }}</td>
-                            <td>{{ c.TotalConfirmed }}</td>
-                            <td>{{ c.NewDeaths }}</td>
-                            <td>{{ c.TotalDeaths }}</td>
-                            <td>{{ c.NewRecovered }}</td>
-                            <td>{{ c.TotalRecovered }}</td>
-                        </tr>
-                    </table>
+        
+        
+            <div class="container-fluid">
+                <h1 class="mt-4">Dashboard</h1>
+                <ol class="breadcrumb mb-4">
+                    <li class="breadcrumb-item active">Dashboard</li>
+                </ol>
+                <div class="row" *ngIf = "summary">
+                    <ng-container *ngFor="let data of summary">
+                        <div class="col-xl-2 col-md-6">
+                            <app-home [data]="data"></app-home>
+                        </div>
+                    </ng-container>
                 </div>
-            </div>
-        </div>
+        
+        <!-- <app-table></app-table> -->
         
         <app-footer></app-footer>
     </div>
 </div>
-<div> {{ covData }} </div>
     
     
 

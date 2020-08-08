@@ -1,5 +1,4 @@
-import { AppComponent } from './../../app.component';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -8,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(public appComponent: AppComponent) { }
+  constructor() { }
 
+  @Input() data: {};
+  @Input() title: String;
+  @Input() value: Number;
+  
   ngOnInit(): void {
+    this.title = this.data["title"];
+    this.value = this.data["value"];
   }
 
 }
