@@ -14,6 +14,7 @@ import { NavComponent } from './common/nav/nav.component';
 //The following added to routing:
 import { HomeComponent } from './common/home/home.component';
 import { TableComponent } from './pages/table/table.component';
+import { CardComponent } from './common/card/card.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { TableComponent } from './pages/table/table.component';
     RegisterComponent,
     ForgotPasswordComponent,
     NavComponent,
-    TableComponent
+    TableComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
