@@ -11,12 +11,14 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   @Input() data: {};
-  @Input() title: String;
-  @Input() value;
+  title: String;
+  value: Number;
+  className: String;
   
   ngOnInit(): void {
     this.title = this.data["title"];
     this.value = this.data["value"];
+    this.className = this.data["className"];
   }
 
 }

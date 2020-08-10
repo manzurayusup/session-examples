@@ -1,30 +1,23 @@
 <app-header></app-header>
 <div id="layoutSidenav">
     <app-nav></app-nav>
-    
+
     <div id="layoutSidenav_content">
-        
-        
-            <div class="container-fluid">
-                <h1 class="mt-4">Dashboard</h1>
-                <ol class="breadcrumb mb-4">
-                    <li class="breadcrumb-item active">Dashboard</li>
-                </ol>
-                <div class="row" *ngIf = "summary">
-                    <ng-container *ngFor="let data of summary">
-                        <div class="col-xl-2 col-md-6">
-                            <app-home [data]="data"></app-home>
-                        </div>
-                    </ng-container>
-                </div>
-                <p>{{ summary[0].value }}</p>
-        
-        <!-- <app-table></app-table> -->
-        
-        <app-footer></app-footer>
+        <div class="container-fluid">
+            <h1 class="mt-4">Dashboard</h1>
+            <ol class="breadcrumb mb-4">
+                <li class="breadcrumb-item active">Dashboard</li>
+            </ol>
+            <div class="row" *ngIf="summary">
+                <ng-container *ngFor="let data of summary">
+                    <div class="col-xl-2 col-md-6">
+                        <app-home [data]="data"></app-home>
+                    </div>
+                </ng-container>
+            </div>
+
+            <app-table [data]="covData.Countries"></app-table>
+
+            <app-footer></app-footer>
+        </div>
     </div>
-</div>
-    
-    
-
-

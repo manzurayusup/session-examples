@@ -1,5 +1,5 @@
 export class CovidModel {
-    "Global": {
+    Global: {
         "NewConfirmed": 0,
         "TotalConfirmed": 0,
         "NewDeaths": 0,
@@ -8,5 +8,5 @@ export class CovidModel {
         "TotalRecovered": 0
       };
       
-      "Countries": [];
+      Countries: [];
 }
